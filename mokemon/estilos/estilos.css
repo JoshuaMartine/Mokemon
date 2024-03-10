@@ -9,6 +9,6 @@
 }
 
 .banner:hover{
-    color: green;
+    color: rgb(19, 0, 128);
     transition: 1s;
 }
