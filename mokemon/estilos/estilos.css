@@ -1,0 +1,14 @@
+.banner{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: red;
+    background: black;
+    border-radius: 3%;
+    transition: 1s;
+}
+
+.banner:hover{
+    color: green;
+    transition: 1s;
+}
