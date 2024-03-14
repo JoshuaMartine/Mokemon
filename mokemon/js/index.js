@@ -1,7 +1,12 @@
 function iniciarJuego() {
   let botonMascota = document.getElementById("boton-mascota");
   botonMascota.addEventListener("click", selecionarMascotaJugador);
+  mascotaEnemigo(); // Llamar a la función para seleccionar la mascota enemiga aleatoria al iniciar el juego
 }
+
+// Resto del código...
+
+
 
 function selecionarMascotaJugador() {
   let charmander = document.getElementById("charmander").checked;
@@ -10,23 +15,52 @@ function selecionarMascotaJugador() {
   let wakala = document.getElementById("wakala").checked;
   let kaka = document.getElementById("kaka").checked;
   let chipa = document.getElementById("chipa").checked;
+  let mascotaJugador = document.getElementById("mascota-jugador")
+  
 
   if (charmander == true) {
-    alert("selecionaste a charmander");
+    mascotaJugador.innerHTML = "charmander"
   } else if (squirtle == true) {
-    alert("selecionast a squirtle");
+    mascotaJugador.innerHTML = "squirtle";
   } else if (venasaur == true) {
-    alert("selecionaste a venasuar");
+    mascotaJugador.innerHTML = "venasaur"
   } else if (wakala == true) {
-    alert("selecionaste a wakala");
+    mascotaJugador.innerHTML = "Wakala"
   } else if (kaka == true) {
-    alert("selecionaste a kaka");
+    mascotaJugador.innerHTML = "kaka"
   } else if (chipa == true) {
-    alert("selecionaste a chipa");
+    mascotaJugador.innerHTML = "chipa"
   } else{
-    alert("seleciona una mascota")
+    alert("Seleccione una mascota")
   }
 }
+
+
+function mascotaEnemigo() {
+  let ataqueAleatorio = aleatorio(1, 6);
+  let mascotaEnemigo = document.getElementById("mascota-enemigo");
+
+  if (ataqueAleatorio == 1) {
+    mascotaEnemigo.innerHTML = "charmander";
+  } else if (ataqueAleatorio == 2) {
+    mascotaEnemigo.innerHTML = "squirtle";
+  } else if (ataqueAleatorio == 3) {
+    mascotaEnemigo.innerHTML = "venasaur";
+  } else if (ataqueAleatorio == 4) {
+    mascotaEnemigo.innerHTML = "Wakala";
+  } else if (ataqueAleatorio == 5) {
+    mascotaEnemigo.innerHTML = "kaka";
+  } else if (ataqueAleatorio == 6) {
+    mascotaEnemigo.innerHTML = "chipa";
+  }
+}
+
+function aleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+
 
 window.addEventListener("load", iniciarJuego);
 
