@@ -1,13 +1,24 @@
+let ataqueJugador 
+let AtaqueAleatorioEnemigo
+
 function iniciarJuego() {
   let botonMascota = document.getElementById("boton-mascota");
   botonMascota.addEventListener("click", selecionarMascotaJugador);
-  mascotaEnemigo(); // Llamar a la función para seleccionar la mascota enemiga aleatoria al iniciar el juego
+ //variables donde se escucha que ataque selecciona el jugador
+  let botonFuego = document.getElementById('fuego')
+  botonFuego.addEventListener("click", ataqueFuego)
+
+  let botonAgua = document.getElementById('agua')
+  botonAgua.addEventListener("click", ataqueAgua)
+
+  let botonPlanta = document.getElementById('planta')
+  botonPlanta.addEventListener("click", ataquePlanta)
+
+
+  let ataque = document.getElementById("ataque")
 }
 
-// Resto del código...
-
-
-
+//selecion de mascota
 function selecionarMascotaJugador() {
   let charmander = document.getElementById("charmander").checked;
   let squirtle = document.getElementById("squirtle").checked;
@@ -33,33 +44,64 @@ function selecionarMascotaJugador() {
   } else{
     alert("Seleccione una mascota")
   }
+
+    mascotaEnemigo()
+    
 }
 
 
 function mascotaEnemigo() {
-  let ataqueAleatorio = aleatorio(1, 6);
+  let mascotaAleatorio = aleatorio(1, 6);
   let mascotaEnemigo = document.getElementById("mascota-enemigo");
 
-  if (ataqueAleatorio == 1) {
+  if (mascotaAleatorio == 1) {
     mascotaEnemigo.innerHTML = "charmander";
-  } else if (ataqueAleatorio == 2) {
+  } else if (mascotaAleatorio == 2) {
     mascotaEnemigo.innerHTML = "squirtle";
-  } else if (ataqueAleatorio == 3) {
+  } else if (mascotaAleatorio == 3) {
     mascotaEnemigo.innerHTML = "venasaur";
-  } else if (ataqueAleatorio == 4) {
+  } else if (mascotaAleatorio == 4) {
     mascotaEnemigo.innerHTML = "Wakala";
-  } else if (ataqueAleatorio == 5) {
+  } else if (mascotaAleatorio == 5) {
     mascotaEnemigo.innerHTML = "kaka";
-  } else if (ataqueAleatorio == 6) {
+  } else if (mascotaAleatorio == 6) {
     mascotaEnemigo.innerHTML = "chipa";
   }
+}
+
+
+function ataqueFuego(){
+  ataqueJugador = "fuego"
+  ataqueAleatorioEnemigo()
+}
+
+function ataqueAgua(){
+  ataqueJugador = "Agua"
+  ataqueAleatorioEnemigo()
+}
+
+
+function ataquePlanta(){
+  ataqueJugador = "Planta"
+  ataqueAleatorioEnemigo()
+}
+
+
+function ataqueAleatorioEnemigo(){
+ let ataqueAleatorio = aleatorio(1,3)
+
+ if (ataqueAleatorio == 1){
+  ataqueAleatorioEnemigo = "fuego"
+ }else if (ataqueAleatorio == 2){
+  ataqueAleatorioEnemigo = "Agua"
+ }else if (ataqueAleatorio == 3){
+  ataqueAleatorioEnemigo = "Planta"
+ }
 }
 
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-
 
 
 window.addEventListener("load", iniciarJuego);
