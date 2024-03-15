@@ -13,7 +13,7 @@
 
     <section id="Seleccion-mascota">
       <h2>Alige a tu mascota:</h2>
-
+    <div class="mascotass">
       <label for="charmander"> charmander</label>
       <input type="radio" name="mascota" id="charmander" />
       <label for="squirtle"> squirtle</label>
@@ -26,6 +26,7 @@
       <input type="radio" name="mascota" id="kaka" />
       <label for="chipa"> chipa</label>
       <input type="radio" name="mascota" id="chipa" />
+    </div>
 
       <button id="boton-mascota">Selecionar tu mascota</button>
     </section>
@@ -33,8 +34,8 @@
     <section id="Seleccionar-ataque">
       <h2>Elige tu ataque</h2>
 
-      <p>Tu mascota <span id="mascota-jugador"> </span> tiene 3</span> vidas</p>
-      <p>la mascota enemiga <span id="mascota-enemigo"> </span> tiene 3</span> vidas</p>
+      <p>Tu mascota <span id="mascota-jugador"> </span> tiene <span id="vidas-jugador">3</span> vidas</p>
+      <p>la mascota enemiga <span id="mascota-enemigo"></span> tiene <span id="vidas-enemigas">3</span>vidas</p>
 
       <p>
         <button id="fuego" class="fuego">fuego 🔥</button>
@@ -43,9 +44,7 @@
       </p>
     </section>
 
-    <section id="mensajes">
-      <p>Tu mascota ataco con <span id="ataque-jugador">fuego,</span> la mascota del enemigo ataco con <Span id="ataque-enemigo">Agua</Span></p>
-    </section>
+    <section id="mensajes"></section>
 
     <section id="reiniciar">
       <button id="button-reiniciar">reiniciar</button>
