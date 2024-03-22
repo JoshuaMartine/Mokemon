@@ -1,55 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mokemon</title>
-    <link rel="stylesheet" href="estilos/estilos.css" />
-    <script src="js/index.js"></script>
-   
-  </head>
-  <body>
-    <nav class="banner"><h1>Mokemon 🔥💧☘</h1></nav>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>MOKEPON!</title>
+        <link rel="stylesheet" href="./estilos/estilos.css">
+    </head>
+    <body>
+        <section id="seleccionar-mascota">
+            <h1 class="titulo">Mokepon</h1>
 
-    <section id="Seleccion-mascota">
-      <h2>Alige a tu mascota:</h2>
-    <div class="mascotass">
-      <label for="charmander"> charmander</label>
-      <input type="radio" name="mascota" id="charmander" />
-      <label for="squirtle"> squirtle</label>
-      <input type="radio" name="mascota" id="squirtle" />
-      <label for="venasaur"> venasaur</label>
-      <input type="radio" name="mascota" id="venasaur" />
-      <label for="wakala"> wakala</label>
-      <input type="radio" name="mascota" id="wakala" />
-      <label for="kaka"> kaka</label>
-      <input type="radio" name="mascota" id="kaka" />
-      <label for="chipa"> chipa</label>
-      <input type="radio" name="mascota" id="chipa" />
-    </div>
+            <h2 class="subtitulo">Elige tu mascota:</h2>
 
-      <button id="boton-mascota">Selecionar tu mascota</button>
-    </section>
+            <div class="tarjetas">
+                <input type="radio" name="mascota" id="hipodoge" />
+                <label class="tarjeta-de-mokepon" for="hipodoge">
+                    <p>Hipodoge</p>
+                    <img src="https://static.platzi.com/media/tmp/class-files/github/curso-programacion-basica/curso-programacion-basica-42-detalles-finales-css/programar/mokepon/assets/mokepons_mokepon_capipepo_attack.png" alt="Hipodoge">
+                </label>
+                
+                <input type="radio" name="mascota" id="capipepo" />
+                <label class="tarjeta-de-mokepon" for="capipepo">
+                    <p>Capipepo</p>
+                    <img src="https://static.platzi.com/media/tmp/class-files/github/curso-programacion-basica/curso-programacion-basica-42-detalles-finales-css/programar/mokepon/assets/mokepons_mokepon_hipodoge_attack.png" alt="Capipepo">
+                </label>
 
-    <section id="Seleccionar-ataque">
-      <h2>Elige tu ataque</h2>
+                <input type="radio" name="mascota" id="ratigueya" />
+                <label class="tarjeta-de-mokepon" for="ratigueya">
+                    <p>Ratigueya</p>
+                    <img src="https://static.platzi.com/media/tmp/class-files/github/curso-programacion-basica/curso-programacion-basica-42-detalles-finales-css/programar/mokepon/assets/mokepons_mokepon_ratigueya_attack.png" alt="Ratigueya">
+                </label>
+            </div>
 
-      <p>Tu mascota <span id="mascota-jugador"> </span> tiene <span id="vidas-jugador">3</span> vidas</p>
-      <p>la mascota enemiga <span id="mascota-enemigo"></span> tiene <span id="vidas-enemigas">3</span>vidas</p>
+            <button id="boton-mascota">Seleccionar</button>
+        </section>
 
-      <p>
-        <button id="fuego" class="fuego">fuego 🔥</button>
-        <button id="agua" class="Agua">Agua 💧</button>
-        <button id="planta" class="Planta">Planta ☘</button>
-      </p>
-    </section>
+        <section id="seleccionar-ataque">
+            <h1 class="titulo">Mokepon</h1>
 
-    <section id="mensajes"></section>
+            <h2 class="subtitulo">Elige tu ataque:</h2>
 
-    <section id="reiniciar">
-      <button id="button-reiniciar">reiniciar</button>
-    </section>
+            <div class="tarjetas-ataques">
+                <button id="boton-fuego" class="boton-de-ataque">Fuego 🔥</button>
+                <button id="boton-agua" class="boton-de-ataque">Agua 💧</button>
+                <button id="boton-tierra" class="boton-de-ataque">Tierra 🌱</button>
+            </div>
 
-   
-  </body>
+            <div id="mensajes">
+                <p id="resultado">Mucha suerte</p>
+
+                <section id="reiniciar">
+                    <button id="boton-reiniciar">Reiniciar</button>
+                </section>
+            </div>
+
+            <div class="ataques">
+                <div class="ataques-jugador">
+                    <p id="vidas-jugador">3</p>
+                    <p id="mascota-jugador"></p>
+                    <div id="ataques-del-jugador"></div>
+                </div>
+                <div class="ataques-enemigo">
+                    <p id="vidas-enemigo">3</p>
+                    <p id="mascota-enemigo"></p>
+                    <div id="ataques-del-enemigo"></div>
+                </div>
+            </div>
+        </section>
+        <script src="./js/index.js"></script>
+    </body>
 </html>
